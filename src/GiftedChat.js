@@ -341,7 +341,10 @@ class GiftedChat extends React.Component {
     }
 
     this.props.onSend(messages);
-    this.scrollToBottom();
+
+    if (this.props.scrollOnSend) {
+      this.scrollToBottom();
+    }
 
     if (shouldResetInputToolbar === true) {
       setTimeout(() => {
@@ -517,6 +520,7 @@ GiftedChat.defaultProps = {
     ios: true,
     android: false,
   }),
+  scrollOnSend: true,
   loadEarlier: false,
   onLoadEarlier: () => { },
   isLoadingEarlier: false,
@@ -566,6 +570,7 @@ GiftedChat.propTypes = {
   messageIdGenerator: PropTypes.func,
   user: PropTypes.object,
   onSend: PropTypes.func,
+  scrollOnSend: PropTypes.bool,
   locale: PropTypes.string,
   timeFormat: PropTypes.string,
   dateFormat: PropTypes.string,
