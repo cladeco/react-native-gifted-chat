@@ -10,7 +10,7 @@ import {
   SafeAreaView,
 } from 'react-native'
 
-import ActionSheet from '@expo/react-native-action-sheet'
+import { ActionSheetProvider } from '@expo/react-native-action-sheet'
 import moment from 'moment'
 import uuid from 'uuid'
 import { isIphoneX } from 'react-native-iphone-x-helper'
@@ -42,7 +42,7 @@ import {
 import { IMessage, User, Reply } from './types'
 import QuickReplies from './QuickReplies'
 
-const GiftedActionSheet = ActionSheet as any
+const GiftedActionSheet = ActionSheetProvider as any
 
 export interface GiftedChatProps<TMessage extends IMessage = IMessage> {
   /* Messages to display */
