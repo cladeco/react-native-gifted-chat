@@ -2,7 +2,7 @@
   "name": "react-native-gifted-chat",
   "version": "0.9.11",
   "description": "The most complete chat UI for React Native",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "test:coverage": "TZ=Europe/Paris jest --coverage",
     "prepublishOnly": "yarn lint && yarn build && yarn test && yarn config:npm",
     "postpublish": "yarn config:dev",
-    "postinstall": "yarn build && yarn config:npm"
+    "postinstall": "yarn install --ignore-scripts && yarn build && yarn config:npm"
   },
   "jest": {
     "preset": "react-native",
