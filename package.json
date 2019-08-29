@@ -34,7 +34,8 @@
     "test:watch": "TZ=Europe/Paris jest --watch",
     "test:coverage": "TZ=Europe/Paris jest --coverage",
     "prepublishOnly": "yarn lint && yarn build && yarn test && yarn config:npm",
-    "postpublish": "yarn config:dev"
+    "postpublish": "yarn config:dev",
+    "postinstall": "cd node_modules/react-native-gifted-chat && yarn install && yarn lint && yarn build && yarn config:npm && rm -rf node_modules"
   },
   "jest": {
     "preset": "react-native",
