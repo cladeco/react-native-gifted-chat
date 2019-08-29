@@ -35,7 +35,7 @@
     "test:coverage": "TZ=Europe/Paris jest --coverage",
     "prepublishOnly": "yarn lint && yarn build && yarn test && yarn config:npm",
     "postpublish": "yarn config:dev",
-    "postinstall": "yarn prepublishOnly"
+    "postinstall": "yarn build && yarn config:npm"
   },
   "jest": {
     "preset": "react-native",
